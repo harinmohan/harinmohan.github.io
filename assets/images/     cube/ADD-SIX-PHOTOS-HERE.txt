@@ -1,0 +1,1 @@
+Add your six approved personal photographs here, named photo-1.jpg through photo-6.jpg. Use landscape/square high-resolution photos; the cube uses object-fit: cover.
