@@ -1,0 +1,103 @@
+{
+  "researchProjects": [],
+  "grants": [],
+  "students": [],
+  "publications": [
+    {
+      "title": "Artificial intelligence and machine learning in hydrogen fuel cell microgrids: emerging trends, challenges, and opportunities",
+      "year": "2026",
+      "venue": "Engineering Research Express, 8(12)"
+    },
+    {
+      "title": "Energy management with control parameter optimization for a PV/FC/battery islanded DC microgrid",
+      "year": "2025",
+      "venue": "Engineering Research Express, 7(2), 025334"
+    },
+    {
+      "title": "Performance optimization techniques on point absorber and oscillating water column wave energy converter: A comprehensive review",
+      "year": "2025",
+      "venue": "IEEE Access, 13"
+    },
+    {
+      "title": "Optimized power flow management based on Harris Hawks optimization for an islanded DC microgrid",
+      "year": "2024",
+      "venue": "Energy Harvesting and Systems, 11(1)"
+    }
+  ],
+  "patents": [
+    {
+      "title": "Voice-controlled modular robot for industrial inspection and reporting",
+      "year": "2026",
+      "type": "Patent application",
+      "number": "202641018175",
+      "status": "Application"
+    },
+    {
+      "title": "Sustainable apparatus and method for shopping and energy efficiency",
+      "year": "2024",
+      "type": "Patent application",
+      "number": "202441057103",
+      "status": "Published"
+    },
+    {
+      "title": "Mask decontamination apparatus and method for image pipelining with encrypted ledger",
+      "year": "2024",
+      "type": "Patent application",
+      "number": "202441011687",
+      "status": "Published"
+    },
+    {
+      "title": "Portable wind-solar powered EV charging station",
+      "year": "2024",
+      "type": "Design registration",
+      "number": "400576-001",
+      "status": "Design"
+    },
+    {
+      "title": "Solar vertical tower garden",
+      "year": "2024",
+      "type": "Design registration",
+      "number": "409266-001",
+      "status": "Design"
+    },
+    {
+      "title": "Multi gas sensor housing",
+      "year": "2024",
+      "type": "Design registration",
+      "number": "412709-001",
+      "status": "Design"
+    },
+    {
+      "title": "Solar-powered portable aquaponics system",
+      "year": "2024",
+      "type": "Design registration",
+      "number": "420019-001",
+      "status": "Design"
+    },
+    {
+      "title": "Petal shaped solar panel with integrated helical wind turbine",
+      "year": "2024",
+      "type": "Design registration",
+      "number": "434604-001",
+      "status": "Design"
+    }
+  ],
+  "courses": [],
+  "talks": [],
+  "videos": [],
+  "awards": [
+    {
+      "title": "Best Paper Award \u2014 Second International Conference on Power, Control and Computing Technologies (ICPC2T)",
+      "year": "2022"
+    }
+  ],
+  "administrative": [],
+  "memberships": [],
+  "committees": [],
+  "contributions": [],
+  "calendar": {
+    "description": "Academic calendar embed can be configured through the admin dashboard. Appointment booking is available through your Google Calendar booking page.",
+    "bookingUrl": "https://calendar.app.google/xx5qPjHzxkqibVWi7",
+    "embedUrl": ""
+  }
+}
