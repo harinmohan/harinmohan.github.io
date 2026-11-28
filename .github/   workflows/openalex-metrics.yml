@@ -1,0 +1,45 @@
+name: Refresh OpenAlex metrics
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Fetch author metrics
+        env:
+          OPENALEX_AUTHOR_ID: ${{ vars.OPENALEX_AUTHOR_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request, datetime, pathlib, sys
+          author = os.environ.get("OPENALEX_AUTHOR_ID", "").strip()
+          if not author:
+              print("OPENALEX_AUTHOR_ID repository variable is not set; skipping.")
+              sys.exit(0)
+          author = author.split("/")[-1]
+          url = f"https://api.openalex.org/authors/{author}"
+          with urllib.request.urlopen(url, timeout=30) as response:
+              data = json.load(response)
+          out = {
+              "author_id": author,
+              "cited_by_count": data.get("cited_by_count"),
+              "h_index": (data.get("summary_stats") or {}).get("h_index"),
+              "i10_index": (data.get("summary_stats") or {}).get("i10_index"),
+              "updated_at": datetime.date.today().isoformat(),
+              "source": "OpenAlex"
+          }
+          pathlib.Path("data/openalex-metrics.json").write_text(json.dumps(out, indent=2) + "\\n")
+          PY
+      - name: Commit updated metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/openalex-metrics.json
+          git diff --cached --quiet || (git commit -m "Refresh OpenAlex research metrics" && git push)
