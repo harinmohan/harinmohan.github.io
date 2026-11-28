@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: harinmohan/harinmohan.github.io
+  branch: main
+  base_url: https://YOUR-OAUTH-SERVICE.example.com
+  auth_endpoint: auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+site_url: https://harinmohan.github.io
+display_url: https://harinmohan.github.io
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio Content"
+    files:
+      - name: "site_content"
+        label: "Website Sections"
+        file: "data/site-content.json"
+        format: "json"
+        fields:
+          - {label: "R&D Activities", name: "researchProjects", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "Links", name: "links", widget: "list", required: false, fields: [{label: "Label", name: "label", widget: "string"}, {label: "URL", name: "url", widget: "string"}]}]}
+          - {label: "Project Grants", name: "grants", widget: "list", fields: [{label: "Year", name: "year", widget: "string"}, {label: "Title", name: "title", widget: "string"}, {label: "Funding Agency", name: "fundingAgency", widget: "string", required: false}, {label: "Role", name: "role", widget: "string", required: false}, {label: "Status", name: "status", widget: "string", required: false}, {label: "Amount", name: "amount", widget: "string", required: false}, {label: "Duration", name: "duration", widget: "string", required: false}]}
+          - {label: "Students & Projects", name: "students", widget: "list", fields: [{label: "Degree", name: "degree", widget: "string"}, {label: "Title", name: "title", widget: "string"}, {label: "Year", name: "year", widget: "string"}, {label: "Status", name: "status", widget: "string", required: false}, {label: "Role", name: "role", widget: "string", required: false}]}
+          - {label: "Publications", name: "publications", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Year", name: "year", widget: "string"}, {label: "Journal / Venue", name: "venue", widget: "string", required: false}, {label: "DOI", name: "doi", widget: "string", required: false}]}
+          - {label: "Patents", name: "patents", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Year", name: "year", widget: "string"}, {label: "Type", name: "type", widget: "string"}, {label: "Application / Design Number", name: "number", widget: "string", required: false}, {label: "Status", name: "status", widget: "string", required: false}]}
+          - {label: "Courses", name: "courses", widget: "list", fields: [{label: "Programme", name: "programme", widget: "string"}, {label: "Course Code", name: "code", widget: "string"}, {label: "Subject", name: "subject", widget: "string"}, {label: "Semester", name: "semester", widget: "string"}, {label: "Academic Year", name: "academicYear", widget: "string"}, {label: "L-T-P", name: "ltp", widget: "string", required: false}]}
+          - {label: "Seminars & Talks", name: "talks", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"}, {label: "Year / Date", name: "year", widget: "string", required: false}]}
+          - {label: "YouTube Videos", name: "videos", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Video URL", name: "url", widget: "string"}, {label: "Thumbnail URL", name: "thumbnail", widget: "string", required: false}]}
+          - {label: "Awards", name: "awards", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Year", name: "year", widget: "string"}, {label: "Description", name: "description", widget: "text", required: false}]}
+          - {label: "Administrative Responsibilities", name: "administrative", widget: "list", fields: [{label: "Role", name: "role", widget: "string"}, {label: "Organisation", name: "organisation", widget: "string", required: false}, {label: "Period", name: "period", widget: "string", required: false}, {label: "Description", name: "description", widget: "text", required: false}]}
+          - {label: "Professional Memberships", name: "memberships", widget: "list", fields: [{label: "Name", name: "name", widget: "string"}, {label: "Period", name: "period", widget: "string", required: false}]}
+          - {label: "Academic Committees", name: "committees", widget: "list", fields: [{label: "Role", name: "role", widget: "string"}, {label: "Organisation", name: "organisation", widget: "string", required: false}, {label: "Period", name: "period", widget: "string", required: false}]}
+          - {label: "Institutional Contributions", name: "contributions", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text", required: false}]}
+          - label: "Academic Calendar Settings"
+            name: "calendar"
+            widget: "object"
+            fields:
+              - {label: "Calendar Description", name: "description", widget: "text"}
+              - {label: "Google Calendar Embed URL", name: "embedUrl", widget: "string", required: false}
+              - {label: "Appointment Booking URL", name: "bookingUrl", widget: "string"}
